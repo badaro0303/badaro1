@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardMapper">
+
+	<select id="getList" resultType="org.zerock.domain.BoardVO">
+		<![CDATA[
+			select * from bdr_post 
+		]]>
+	</select>
+		<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
+			select *
+			from (
+					select @rownum:=@rownum+1 as rownum,b.*
+			        from (
+						select @rownum:=0
+					) as tmp,bdr_post as b
+					order by p_turn desc
+			) as boardList
+			<![CDATA[
+			where rownum>(#{pageNum} - 1)*#{amount} and rownum<=#{pageNum} *#{amount}
+			]]>
+		</select>
+		
+	<select id="getTotalCount" resultType="int">
+		select count(*) from bdr_post
+	</select>
+
+	
+	<select id="read" resultType="org.zerock.domain.BoardVO">
+		select * from bdr_post where p_turn = #{p_turn}
+	</select>
+	
+	<insert id="insert">  
+		insert into bdr_post (p_title, p_rating, p_beach, p_content, p_user)
+		values(#{p_title}, #{p_rating}, #{p_beach}, #{p_content}, #{p_user})
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="p_turn" order="BEFORE" resultType="long">
+			
+			select max(p_turn)+1 p_turn from bdr_post
+			
+		</selectKey>
+		
+		insert into bdr_post (p_title, p_rating, p_beach, p_content, p_user)
+		values(#{p_title}, #{p_rating}, #{p_beach}, #{p_content}, #{p_user})
+	</insert>
+	
+	<delete id="delete" >	
+		delete from bdr_post where p_turn = #{p_turn} 
+	</delete>
+	
+	<update id="update">
+		update bdr_post
+		set p_title = #{p_title},
+		p_content = #{p_content},
+		p_date = now()
+		where p_turn = #{p_turn}
+	</update>
+	
+	<update id="updateCount">
+		update bdr_post
+		set p_count = p_count+1
+		where p_turn = #{p_turn}
+	</update>
+	
+	<!-- 카테고리 호출 -->
+	<select id="category" resultType="org.zerock.domain.CategoryVO">
+		select * from bdr_cate order by cateCode
+	</select>
+
+</mapper>
+	
+	

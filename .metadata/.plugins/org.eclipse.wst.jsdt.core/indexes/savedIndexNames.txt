@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\leehyungu\Desktop\my\badaro\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1629015556.index
+2863294462.index
+1260895039.index
+3508593480.index
+2051705981.index
+675449111.index

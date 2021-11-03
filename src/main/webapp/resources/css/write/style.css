@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#wrap header{
+    padding: 30px 50px;
+    border-bottom: 1px solid;
+}
+
+#wrap header:not(:last-child){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+#wrap a{
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+}
+
+#wrap .publication button{
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    opacity: 0.7;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.938);
+}
+
+#container{
+    background-color: rgb(218, 242, 252);
+}
+
+.con_in{
+    width: 1280px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.top_info{
+    display: flex;
+    font-size: 20px;
+    width: 800px;
+    height: 50px;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.form_section_content select {		/* 카테고리 css 설정 */
+    width: 92%;
+    height: 35px;
+    font-size: 20px;
+    text-align-last: center;
+    margin-left: 5px;
+}
+.cate_wrap span {
+    font-weight: 600;
+}
+.cate_wrap:not(:first-child) {
+    margin-top: 20px;
+}
+
+.top_info .star{
+    display: flex;
+    width: 160px;
+    height:30px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_info .star span{
+    color: #444;
+}
+
+.top_title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.top_title p textarea{
+    display: block;
+    padding-top: 6px;
+    padding-left: 30px;
+    font-size: 35px;
+    line-height: 50px;
+    width: 770px;
+    height: 50px;
+    color: #999;
+    border: 1px solid #999;
+    border-radius: 8px;
+}
+
+.write button{
+    margin: 0 0 30px 110px;
+    width: 200px;
+    height: 30px;
+    border: 2px solid #ccc;
+    opacity: 0.7;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.938);
+}
+
+.write p{
+    display: flex;
+    justify-content: center;
+}
+
+.write p textarea{
+    display: block;
+    padding: 30px;
+    font-size: 20px;
+    line-height: 25px;
+    width: 1000px;
+    height: 600px;
+    color: #999;
+    border: 1px solid #999;
+    border-radius: 10px;
+    margin-bottom: 80px;
+}
+
+
+/* 별점 */
+
+.star{
+    display: flex;
+}
+
+.star-rating{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 20px;
+    line-height: 1em;
+    justify-content: space-around;
+    padding: 0 0.2em;
+    text-align: center;
+    width: 5em;
+}
+
+/* 기존 라디오 버튼 사라짐 */
+.star-rating input{
+    display: none;
+}
+
+.star-rating label {
+    -webkit-text-fill-color: transparent;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #2b2a29;
+    cursor: pointer;
+}
+
+/* 클릭 시 변경 */
+.star-rating :checked ~ label{
+    -webkit-text-fill-color: gold;
+}

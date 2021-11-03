@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanskr/v21/PbykFmXiEBPT4ITbgNA5Cgm21Q.woff) format('woff');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanskr/v21/Pby7FmXiEBPT4ITbgNA5CgmOIl3I6w.woff) format('woff');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notosanskr/v21/Pby7FmXiEBPT4ITbgNA5CgmOalvI6w.woff) format('woff');
+}

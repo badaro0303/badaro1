@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+
+
+.text{
+    position: absolute;
+    width: 1280px;
+    margin: 0 auto;
+    top: 30px;
+    left: 300px;
+}
+
+
+
+/* 게시글 목록 CSS */
+
+table {
+    border-collapse: collapse;
+}
+
+caption{
+    display: none;
+}
+
+#board_list_wrap {
+	width: 1280px;
+}
+
+#board_list_wrap_in{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    background-color: white;
+    padding: 100px;
+}
+
+.btns{
+	display:flex;
+	justify-content: right;
+	margin-bottom: 10px;
+	
+}
+
+.board_list{
+    width: 100%;
+    border-top: 2px solid rgb(172, 230, 255);
+}
+
+.board_list tr{
+    border-bottom: 1px solid #999;
+}
+
+.board_list th, .board_list td {
+    padding: 10px;
+    font-size: 16px;
+
+}
+
+.board_list td{
+    text-align: center;
+}
+
+.board_list .title{
+    text-align: left;
+}
+
+.board_list .title:hover{
+    text-decoration: underline;
+}
+
+.board_list .rating{
+    color: gold;
+}
+
+ul.pagination {
+	display:flex;
+    justify-content: center;
+}
+
+.pagination li {
+	margin : 0 5px
+}
+}
