@@ -24,7 +24,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="boardlist" items="${list}">
+                    <c:forEach var="boardlist" items="${list}" >
                         <tr>
                             <td>${boardlist.p_beach}</td>
                             <td class="title"><a href="/badaro/board/read?p_turn=${boardlist.p_turn}">${boardlist.p_title}</a></td>
