@@ -9,9 +9,8 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class ReplyPageDTO {
-	// tbl_reply테이블의 해당 게시물 전체 건수
+	// tbl_reply�뀒�씠釉붿쓽 �빐�떦 寃뚯떆臾� �쟾泥� 嫄댁닔
 	private int replyCnt;
-	// tbl_reply테이블의 해당 게시물의 목록 리스트
+	// tbl_reply�뀒�씠釉붿쓽 �빐�떦 寃뚯떆臾쇱쓽 紐⑸줉 由ъ뒪�듃
 	private List<ReplyVO> list;
-	
 }

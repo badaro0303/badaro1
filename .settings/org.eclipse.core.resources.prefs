@@ -1,3 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/main/java/org/zerock/controller/ReplyController.java=UTF-8
+encoding//src/main/java/org/zerock/domain/BoardVO.java=UTF-8
+encoding//src/main/java/org/zerock/domain/ReplyPageDTO.java=UTF-8
+encoding//src/main/java/org/zerock/domain/ReplyVO.java=UTF-8
 encoding//src/main/java/org/zerock/mapper/BoardMapper.java=UTF-8
+encoding//src/main/java/org/zerock/mapper/ReplyMapper.java=UTF-8
 encoding//src/main/java/org/zerock/service/BoardServiceImpl.java=UTF-8
+encoding//src/main/java/org/zerock/service/ReplyService.java=UTF-8
+encoding//src/main/java/org/zerock/service/ReplyServiceImpl.java=UTF-8

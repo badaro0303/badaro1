@@ -6,8 +6,8 @@
 <mapper namespace="org.zerock.mapper.ReplyMapper">
   	<!-- 댓글쓰기 -->
   	<insert id="insert">
-  		insert into bdr_reply(bno,reply,replyer)
-		values(#{bno},#{reply},#{replyer})
+  		insert into bdr_reply(p_turn,reply,replyer)
+		values(#{p_turn},#{reply},#{replyer})
   	</insert>
   	<!-- 댓글상세페이지 -->
   	<select id="read" resultType="org.zerock.domain.ReplyVO">
@@ -26,13 +26,13 @@
   	</update>
   	<!-- 댓글목록리스트 -->
   	<select id="getListWithPaging" resultType="org.zerock.domain.ReplyVO">
-	select rno, bno, reply, replyer,replydate,updatedate
+	select rno, p_turn, reply, replyer,replydate,updatedate
 	from (
 			select @rownum:=@rownum+1 as rownum,b.*
 	        from (
 				select @rownum:=0
 			) as tmp, bdr_reply as b
-            where bno=#{bno}
+            where p_turn=#{p_turn}
 			order by rno desc
 	) as boardList
 	<![CDATA[
@@ -40,7 +40,7 @@
     and rownum<=#{cri.pageNum} * #{cri.amount}
     ]]>
   	</select>
-  	<select id="getCountByBno" resultType="int">
-  		select count(*) from bdr_reply where bno = #{bno}
+  	<select id="getCountByP_turn" resultType="int">
+  		select count(*) from bdr_reply where p_turn = #{p_turn}
   	</select>
 </mapper>

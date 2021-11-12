@@ -101,15 +101,9 @@
 	height : 100%;
 }
 
-#review a{
-	position : absolute;
-	top: 50%;
-	left: 38%;
-	font-size: 30px;
-	font-weight: bold;
-	color : #fff;
+.board_list {
+	margin-bottom : 10px;
 }
-
 
 #footer{
     width: 100%;

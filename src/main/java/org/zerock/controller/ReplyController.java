@@ -31,37 +31,37 @@ public class ReplyController {
 	ReplyService service;
 	
 	@PostMapping(value="new",consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})
-// 접근제어자      리턴타입                                     메소드명                                 변수타입    변수명(매개변수)
+// �젒洹쇱젣�뼱�옄      由ы꽩���엯                                     硫붿냼�뱶紐�                                 蹂��닔���엯    蹂��닔紐�(留ㅺ컻蹂��닔)
 	public ResponseEntity<String> create(@RequestBody ReplyVO vo){
 		log.info("ReplyVO : "+vo);
 		int insertcount = service.register(vo);
 		log.info("Reply INSERT COUNT : "+insertcount);
-		//(조건식)     ? 참        : 거짓
+		//(議곌굔�떇)     ? 李�        : 嫄곗쭞
 		return insertcount==1?new ResponseEntity<>("success",HttpStatus.OK)
 				             :new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	}// 댓글쓰기 끝
+	}// �뙎湲��벐湲� �걹
 	
-	@GetMapping(value="pages/{bno}/{page}",produces= {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_UTF8_VALUE})
-	public ResponseEntity<ReplyPageDTO> getList(@PathVariable("bno") int bno,@PathVariable("page") int page){
+	@GetMapping(value="pages/{p_turn}/{page}",produces= {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_UTF8_VALUE})
+	public ResponseEntity<ReplyPageDTO> getList(@PathVariable(" p_turn") long p_turn, @PathVariable("page") int page){
 		Criteria cri = new Criteria(page,10);
 		
 		log.info(cri);
-		//                          select된 결과                                    통신이 정상적으로 처리
-		return new ResponseEntity<>(service.getList(cri, bno),HttpStatus.OK);
-	}// 댓글 목록 리스트 끝
+		//                          select�맂 寃곌낵                                    �넻�떊�씠 �젙�긽�쟻�쑝濡� 泥섎━
+		return new ResponseEntity<>(service.getList(cri, p_turn),HttpStatus.OK);
+	}// �뙎湲� 紐⑸줉 由ъ뒪�듃 �걹
 	
 	@GetMapping(value="/{rno}",produces= {MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_UTF8_VALUE})
 	public ResponseEntity<ReplyVO> get(@PathVariable("rno") int rno){
 		return new ResponseEntity<>(service.get(rno),HttpStatus.OK);
 		
-	}// 댓글 상세 페이지 끝
+	}// �뙎湲� �긽�꽭 �럹�씠吏� �걹
 	@DeleteMapping(value="/{rno}",produces= {MediaType.TEXT_PLAIN_VALUE})
 	public ResponseEntity<String> remove(@PathVariable("rno") int rno){
 		//int removecount = service.remove(rno);
 		
 		return service.remove(rno)==1?new ResponseEntity<>("success",HttpStatus.OK)
 				                     :new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	}// 댓글 삭제 끝
+	}// �뙎湲� �궘�젣 �걹
 	@PutMapping(value="/{rno}",consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})
 	public ResponseEntity<String> modify(@PathVariable("rno") int rno,
 										 @RequestBody ReplyVO vo){
@@ -70,7 +70,7 @@ public class ReplyController {
 		
 		return service.modify(vo)==1?new ResponseEntity<>("success",HttpStatus.OK)
 				                     :new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	}// 댓글 수정 끝
+	}// �뙎湲� �닔�젙 �걹
 	
 	
 	

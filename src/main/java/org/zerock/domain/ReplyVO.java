@@ -6,16 +6,16 @@ import lombok.Data;
 
 @Data
 public class ReplyVO {
-	// 댓글번호
+	// �뙎湲�踰덊샇
 	private int rno;
-	// 게시판번호
-	private int p_turn;
-	// 댓글내용
+	// 寃뚯떆�뙋踰덊샇
+	private long p_turn;
+	// �뙎湲��궡�슜
 	private String reply;
-	// 댓글작성자
+	// �뙎湲��옉�꽦�옄
 	private String replyer;
-	// 댓글작성일
+	// �뙎湲��옉�꽦�씪
 	private Date replydate;
-	// 댓글수정일
+	// �뙎湲��닔�젙�씪
 	private Date updatedate;
 }

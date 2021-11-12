@@ -38,7 +38,7 @@
         <div class="gnb">
             <div class="aside">
                 <ul>
-                    <li><a href="badaro/board/boardList">동해</a></li>
+                    <li><a href="/badaro/board/boardList">동해</a></li>
                     <li><a href="">menu2</a></li>
                     <li><a href="">menu3</a></li>
                     <li><a href="">menu4</a></li>

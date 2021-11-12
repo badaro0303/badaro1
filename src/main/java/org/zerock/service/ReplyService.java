@@ -7,15 +7,15 @@ import org.zerock.domain.ReplyPageDTO;
 import org.zerock.domain.ReplyVO;
 
 public interface ReplyService {
-	// 댓글쓰기(insert) - Create
+	// �뙎湲��벐湲�(insert) - Create
 	public int register(ReplyVO vo);
-	// 댓글상세페이지(select) - Read
-	// select된 결과가 한 건이니까 ReplyVO 타입
+	// �뙎湲��긽�꽭�럹�씠吏�(select) - Read
+	// select�맂 寃곌낵媛� �븳 嫄댁씠�땲源� ReplyVO ���엯
 	public ReplyVO get(int rno);
-	// 댓글삭제(delete) - Delete
+	// �뙎湲��궘�젣(delete) - Delete
 	public int remove(int rno);
-	// 댓글수정(update) - Update
+	// �뙎湲��닔�젙(update) - Update
 	public int modify(ReplyVO vo);
-	// 댓글목록리스트(select된 결과가 여러 건이니까 ArrayList 타입)
-	public ReplyPageDTO getList(Criteria cri, int bno);
+	// �뙎湲�紐⑸줉由ъ뒪�듃(select�맂 寃곌낵媛� �뿬�윭 嫄댁씠�땲源� ArrayList ���엯)
+	public ReplyPageDTO getList(Criteria cri, long p_turn);
 }

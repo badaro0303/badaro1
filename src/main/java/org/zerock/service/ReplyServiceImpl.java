@@ -20,7 +20,7 @@ import lombok.extern.log4j.Log4j;
 public class ReplyServiceImpl implements ReplyService {
 	private ReplyMapper mapper;
 	private BoardMapper boardmapper;
-	// 댓글 쓰기
+	// �뙎湲� �벐湲�
 	@Transactional
 	@Override
 	public int register(ReplyVO vo) {
@@ -28,13 +28,13 @@ public class ReplyServiceImpl implements ReplyService {
 		boardmapper.updateReplyCnt(vo.getP_turn(), 1);
 		return mapper.insert(vo);
 	}
-	// 댓글상세페이지(select된 결과가 한 건이니까 ReplyVO 타입)
+	// �뙎湲��긽�꽭�럹�씠吏�(select�맂 寃곌낵媛� �븳 嫄댁씠�땲源� ReplyVO ���엯)
 	@Override
 	public ReplyVO get(int rno) {
 		log.info("get...."+rno);
 		return mapper.read(rno);
 	}
-	//댓글삭제
+	//�뙎湲��궘�젣
 	@Transactional
 	@Override
 	public int remove(int rno) {
@@ -43,17 +43,17 @@ public class ReplyServiceImpl implements ReplyService {
 		boardmapper.updateReplyCnt(vo.getP_turn(), -1);
 		return mapper.delete(rno);
 	}
-	// 댓글수정
+	// �뙎湲��닔�젙
 	@Override
 	public int modify(ReplyVO vo) {
 		log.info(vo);
 		return mapper.update(vo);
 	}
-	// 댓글목록리스트(select된 결과가 여러 건이니까 ArrayList 타입)
+	// �뙎湲�紐⑸줉由ъ뒪�듃(select�맂 寃곌낵媛� �뿬�윭 嫄댁씠�땲源� ArrayList ���엯)
 	@Override
-	public ReplyPageDTO getList(Criteria cri, int bno) {
-		log.info("get Reply List of a Board : "+bno);
-		return new ReplyPageDTO(mapper.getCountByBno(bno),
-								mapper.getListWithPaging(cri, bno));
+	public ReplyPageDTO getList(Criteria cri, long p_turn) {
+		log.info("get Reply List of a Board : "+ p_turn);
+		return new ReplyPageDTO(mapper.getCountByP_turn( p_turn),
+								mapper.getListWithPaging(cri,  p_turn));
 	}
 }

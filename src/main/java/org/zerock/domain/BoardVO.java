@@ -15,4 +15,5 @@ public class BoardVO {
 	private String p_user;	// 게시글 작성자
 	private Date p_date;	// 게시글 작성 일자
 	private int p_count;	// 게시글 조회수
+	private int replycnt;	// 댓글 수
 }

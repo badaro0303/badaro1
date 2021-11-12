@@ -15,6 +15,7 @@
                     <caption>게시판 목록</caption>
                     <thead>
                         <tr>
+                        	<th hidden>번호</th>
                             <th>해수욕장</th>
                             <th>제목</th>
                             <th>별점</th>
@@ -26,8 +27,9 @@
                     <tbody>
                     <c:forEach var="boardlist" items="${list}" >
                         <tr>
+                        	<td hidden>${boardlist.p_turn}</td>
                             <td>${boardlist.p_beach}</td>
-                            <td class="title"><a href="/badaro/board/read?p_turn=${boardlist.p_turn}">${boardlist.p_title}</a></td>
+                            <td class="title"><a href="/badaro/board/read?p_turn=${boardlist.p_turn}">${boardlist.p_title}</a>[${boardlist.replycnt}]</td>
                             <td class="rating">★★★★★</td>
                             <td>${boardlist.p_user}</td>
                             <td>${boardlist.p_date}</td>

@@ -7,17 +7,17 @@ import org.zerock.domain.Criteria;
 import org.zerock.domain.ReplyVO;
 
 public interface ReplyMapper {
-	// 댓글쓰기(insert) - Create
+	// �뙎湲��벐湲�(insert) - Create
 	public int insert(ReplyVO vo);
-	// 댓글상세페이지(select) - Read
-	// select된 결과가 한 건이니까 ReplyVO 타입
+	// �뙎湲��긽�꽭�럹�씠吏�(select) - Read
+	// select�맂 寃곌낵媛� �븳 嫄댁씠�땲源� ReplyVO ���엯
 	public ReplyVO read(int rno);
-	// 댓글삭제(delete) - Delete
+	// �뙎湲��궘�젣(delete) - Delete
 	public int delete(int rno);
-	// 댓글수정(update) - Update
+	// �뙎湲��닔�젙(update) - Update
 	public int update(ReplyVO vo);
-	// 댓글목록리스트(select된 결과가 여러 건이니까 ArrayList 타입)
+	// �뙎湲�紐⑸줉由ъ뒪�듃(select�맂 寃곌낵媛� �뿬�윭 嫄댁씠�땲源� ArrayList ���엯)
 	public List<ReplyVO> getListWithPaging(@Param("cri") Criteria cri,
-										   @Param("bno") int bno);
-	public int getCountByBno(int bno);
+										   @Param("p_turn") long p_turn);
+	public int getCountByP_turn(long p_turn);
 }
